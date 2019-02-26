@@ -77,6 +77,25 @@ void PyRun::initPython()
 
     qDebug() << "Python interpreter version:" << QString(Py_GetVersion());
     qDebug() << "Python standard library path:" << QString::fromWCharArray(Py_GetPath());
+
+    /** Add non python standard library modules to search path, then numpy or
+     *  other packages like tensorflow can be imported and called.
+     *  Here I provide three methods.
+     */
+//    //Method 1, python code implementation
+//    PyRun_SimpleString("import sys");
+//    PyRun_SimpleString("sys.path.append('/usr/local/anaconda3/lib/python3.6/site-packages')");
+//    PyRun_SimpleString("print('Python search path %s' % sys.path)");
+
+    //Method 2: C code implementation, pay attention to called functions
+    PyObject *sysPath = PySys_GetObject("path");
+    QString mdlPath = "/usr/local/anaconda3/lib/python3.6/site-packages";
+    PyList_Append(sysPath, PyUnicode_FromString(mdlPath.toUtf8().data()));
+    qDebug() << "Python search path:" << PyUnicode_AsUTF8(PyObject_Str(sysPath));
+
+    //Method 3: Set PYTHONPATH variable, PYTHONPATH should be set as:
+    // '/usr/local/anaconda3/lib/python3.6/site-packages'
+    /** End *******************************************************************/
 }
 
 PyObject *PyRun::importModule(const QString &moduleName)

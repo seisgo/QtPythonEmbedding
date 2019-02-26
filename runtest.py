@@ -1,7 +1,10 @@
 import pdb
+import numpy as np
 
 def test():
-    print('test...')
+    print('Test numpy module...')
+    tArray = np.random.randn(2,3)
+    print(tArray)
 
 def main():
     print('Calling python script success...')

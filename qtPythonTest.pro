@@ -13,8 +13,7 @@ CONFIG += no_keywords
 INCLUDEPATH += -I /usr/local/anaconda3/include/python3.6m
 LIBS += -L/usr/local/anaconda3/lib \
         -lpython3.6m -lpthread -ldl  -lutil -lrt -lm  -Xlinker -export-dynamic
-QMAKE_CXXFLAGS +=   -Wno-unused-result \
-                    -Wsign-compare \
+QMAKE_CXXFLAGS +=   -Wsign-compare \
                     -march=nocona \
                     -ftree-vectorize \
                     -fPIC \
@@ -22,14 +21,7 @@ QMAKE_CXXFLAGS +=   -Wno-unused-result \
                     -pipe \
                     -DNDEBUG \
                     -fwrapv \
-                    -O3 -Wall \
-                    -Wstrict-prototypes
-#                    -mtune=haswell \
-#                    -fstack-protector-strong \
-#                    -fno-plt \
-#                    -flto \
-#                    -fuse-linker-plugin \
-#                    -ffat-lto-objects \
+                    -O3 -Wall
 
 SOURCES += main.cpp\
     pyrun.cpp

@@ -52,6 +52,13 @@ private:
     PyObject *importModule(const QString &moduleName);
     void runFunction(PyObject *obj, const QString &fName);
     bool hasError();
+    /**
+     * @brief c2wc: convert argv type from char** to wchar_t**
+     * @note: The used function mbstowcs can be replaced by Py_DecodeLocale
+     * @param argc
+     * @param argv
+     * @return
+     */
     wchar_t **c2wc(int argc, char **argv);
 };
 
