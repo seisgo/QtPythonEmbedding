@@ -82,14 +82,21 @@ void PyRun::initPython()
      *  other packages like tensorflow can be imported and called.
      *  Here I provide three methods.
      */
-//    //Method 1, python code implementation
+//    //Method 1: python code implementation
 //    PyRun_SimpleString("import sys");
 //    PyRun_SimpleString("sys.path.append('/usr/local/anaconda3/lib/python3.6/site-packages')");
 //    PyRun_SimpleString("print('Python search path %s' % sys.path)");
 
     //Method 2: C code implementation, pay attention to called functions
+    //Subdirectories should be appended successively
     PyObject *sysPath = PySys_GetObject("path");
     QString mdlPath = "/usr/local/anaconda3/lib/python3.6/site-packages";
+    PyList_Append(sysPath, PyUnicode_FromString(mdlPath.toUtf8().data()));
+    mdlPath = "/home/yzy/myStudy/PythonTest/VideoSuperResolution";
+    PyList_Append(sysPath, PyUnicode_FromString(mdlPath.toUtf8().data()));
+    mdlPath = "/home/yzy/myStudy/PythonTest/VideoSuperResolution/Train";
+    PyList_Append(sysPath, PyUnicode_FromString(mdlPath.toUtf8().data()));
+    mdlPath = "/home/yzy/myStudy/PythonTest/VideoSuperResolution/Data";
     PyList_Append(sysPath, PyUnicode_FromString(mdlPath.toUtf8().data()));
     qDebug() << "Python search path:" << PyUnicode_AsUTF8(PyObject_Str(sysPath));
 

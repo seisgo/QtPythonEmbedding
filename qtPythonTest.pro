@@ -30,4 +30,5 @@ HEADERS  += pyrun.h
 
 FORMS    +=
 
-OTHER_FILES += runtest.py
+OTHER_FILES += runtest.py \
+               /home/yzy/myStudy/PythonTest/VideoSuperResolution/Train/run.py
