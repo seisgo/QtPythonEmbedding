@@ -22,6 +22,6 @@ It includes five different implementations of embedding:
 
 **NOTE**:
 - The implementation of complex python project is just a demonstration, to show the process and some tips about this type of implementation.
-- Since I have only uploaded main python script of *VideoSuperResolution* project, and it depends on more relative python scripts and configuration files, this implementation can't be rerun successfully.
-- This implementation of running complex python project is forked in a branch repository, to avoid the rerunning failure.
+- Since I have only uploaded main python script (named as *run.py*) of *VideoSuperResolution* project, and it depends on more relative python scripts and configuration files, this implementation can't be rerun successfully.
+- This implementation of running complex python project is forked in a branch repository, named as *complexPythonProject*, to avoid the rerunning failure.
 
