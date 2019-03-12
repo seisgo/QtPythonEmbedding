@@ -11,6 +11,7 @@ It includes five different implementations of embedding:
 ## Test of simple python script file
 - The test python script file is *runtest.py*.
 - This implementation is stored in master branch.
+
 **NOTE**: For rerunning, abosulte path of python script file should be modified.
 
 ## Test of complex python project
