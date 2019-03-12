@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     /** Test for running from python file, for '__main__' */
     qDebug("\nRun from file...");
     //Abosulte path is needed
-    QString fName = "/home/yzy/Desktop/qtTest/qtPythonTest/runtest.py";
+    QString fName = "/home/yzy/Desktop/qtTest/QtPythonEmbedding/runtest.py";
     pyRun->runFile(fName);
 
     /** Test for running from python file, and run certain function
