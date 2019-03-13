@@ -25,7 +25,6 @@ It includes five different implementations of embedding:
     script_dir = os.path.dirname(script_path)
     os.chdir(script_dir)
   ```
-
 **NOTE**:
 - The implementation of complex python project is just a demonstration, to show the process and some tips about this type of implementation.
 - Since I have only uploaded main python script (named as *run.py*) of *VideoSuperResolution* project, and it depends on more relative python scripts and configuration files, this implementation can't be rerun successfully.
